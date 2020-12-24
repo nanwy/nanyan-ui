@@ -82,7 +82,8 @@ $component-active-bg: $primary !default;
 $line-height-base: 1.5 !default;
 $font-size-base: 1rem !default;
 $font-size-sm: $font-size-base * .875 !default;
-$font-size-lg: $font-size-base * 1.25 !default;
+$font-size-medium: $font-size-base * 0.5 !default;
+$font-size-lg: $font-size-base * 1.625 !default;
 $font-weight-normal: 400 !default;
 $border-width: 1px !default;
 $color-contrast-dark: $black !default;
@@ -100,8 +101,13 @@ $input-btn-focus-width: .2rem !default;
 $input-btn-focus-color-opacity: .25 !default;
 $input-btn-focus-color: rgba($component-active-bg, $input-btn-focus-color-opacity) !default;
 $input-btn-focus-box-shadow: 0 0 0 $input-btn-focus-width $input-btn-focus-color !default;
-$input-btn-padding-y-lg: .5rem !default;
-$input-btn-padding-x-lg: 1rem !default;
+
+$input-btn-padding-y-medium: .5rem !default;
+$input-btn-padding-x-medium: 1rem !default;
+$input-btn-font-size-medium: $font-size-medium !default;
+
+$input-btn-padding-y-lg: .75rem !default;
+$input-btn-padding-x-lg: 1.25rem !default;
 $input-btn-font-size-lg: $font-size-lg !default;
 
 $input-btn-border-width: $border-width !default;
@@ -116,12 +122,17 @@ $btn-padding-y-sm: $input-btn-padding-y-sm !default;
 $btn-padding-x-sm: $input-btn-padding-x-sm !default;
 $btn-font-size-sm: $input-btn-font-size-sm !default;
 
+$btn-padding-y-medium: $input-btn-padding-y-medium !default;
+$btn-padding-x-medium: $input-btn-padding-x-medium !default;
+$btn-font-size-medium: $input-btn-font-size-medium !default;
+
 $btn-padding-y-lg: $input-btn-padding-y-lg !default;
 $btn-padding-x-lg: $input-btn-padding-x-lg !default;
 $btn-font-size-lg: $input-btn-font-size-lg !default;
 $border-radius: .25rem !default;
 $border-radius-sm: .2rem !default;
-$border-radius-lg: .3rem !default;
+$border-radius-medium: .3rem !default;
+$border-radius-lg: .4rem !default;
 
 $rounded-pill: 50rem !default;
 
@@ -145,20 +156,7 @@ $enable-reduced-motion: true !default;
 //
 // For each of Bootstrap's buttons, define text, background, and border color.
 
-$btn-padding-y: $input-btn-padding-y !default;
-$btn-padding-x: $input-btn-padding-x !default;
-$btn-font-family: $input-btn-font-family !default;
-$btn-font-size: $input-btn-font-size !default;
-$btn-line-height: $input-btn-line-height !default;
-$btn-white-space: null !default; // Set to `nowrap` to prevent text wrapping
 
-$btn-padding-y-sm: $input-btn-padding-y-sm !default;
-$btn-padding-x-sm: $input-btn-padding-x-sm !default;
-$btn-font-size-sm: $input-btn-font-size-sm !default;
-
-$btn-padding-y-lg: $input-btn-padding-y-lg !default;
-$btn-padding-x-lg: $input-btn-padding-x-lg !default;
-$btn-font-size-lg: $input-btn-font-size-lg !default;
 
 $btn-border-width: $input-btn-border-width !default;
 
@@ -179,6 +177,7 @@ $btn-block-spacing-y: .5rem !default;
 // Allows for customizing button radius independently from global border radius
 $btn-border-radius: $border-radius !default;
 $btn-border-radius-sm: $border-radius-sm !default;
+$btn-border-radius-medium:$border-radius-medium !default;
 $btn-border-radius-lg: $border-radius-lg !default;
 
 $btn-transition: background-color .15s ease-in-out,

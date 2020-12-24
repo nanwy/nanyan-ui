@@ -31,8 +31,9 @@
 @mixin border-radius($radius: $border-radius, $fallback-border-radius: false) {
   @if $enable-rounded {
     border-radius: valid-radius($radius);
+    
   }
-
+ 
   @else if $fallback-border-radius !=false {
     border-radius: $fallback-border-radius;
   }
@@ -94,9 +95,6 @@
   padding: $padding-y $padding-x;
 
   font-size: $font-size;
-
-
-
 
 
   // Manually declare to provide an override to the browser default
@@ -219,7 +217,8 @@
   &:disabled,
   &.disabled,
   fieldset:disabled & {
-    pointer-events: none;
+    // pointer-events: none;
+    cursor: not-allowed;
     opacity: $btn-disabled-opacity;
     @include box-shadow(none);
   }
@@ -427,6 +426,7 @@ $_luminance-list: .0008 .001 .0011 .0013 .0015 .0017 .002 .0022 .0025 .0027 .003
   &:disabled,
   &.disabled {
     color: $color;
+    cursor: not-allowed;
     background-color: transparent;
   }
 }
@@ -450,6 +450,11 @@ $value in $theme-colors {
 .nan-btn-large {
   @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
 }
+
+.nan-btn-medium {
+  @include button-size($btn-padding-y-medium, $btn-padding-x-medium, $btn-font-size-medium, $btn-border-radius-medium);
+}
+
 
 .nan-btn-small {
   @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);

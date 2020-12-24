@@ -10,7 +10,7 @@
       {
         'is-round': round,
         'is-circle': circle,
-        'is-click': click,
+        'is-click': !unclick,
       },
     ]"
     :autofocus="autofocus"
@@ -61,13 +61,13 @@ export default {
     outline: Boolean,
     round: Boolean,
     circle: Boolean,
-    click: {
+    unclick: {
       type: Boolean,
-      default: true,
+      default: false,
     },
   },
   setup(props, context) {
-    console.log({ ...props });
+    // console.log({ ...props });
     // console.log({ ...context.attrs });
     // const {size,onClick,onMouseOver} = context.attrs
     const { ...rest } = context.attrs; //分离属性

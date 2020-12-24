@@ -35,8 +35,11 @@ export default {
   },
   setup() {
     const asideVisible = inject<Ref<boolean>>("asideVisible");
-    console.log("asideVisible: ", asideVisible.value);
-    return { asideVisible };
+    // console.log("asideVisible: ", asideVisible.value);
+    const onClick = () => {
+      console.log("被点击");
+    };
+    return { asideVisible, onClick };
   },
 };
 </script>

@@ -3,10 +3,8 @@
     <div>
       <NanButton
         @click="onClick"
-        @focus="onClick"
-        @mouseover="onClick"
         theme="warning"
-        size="danger"
+        size="medium"
         circle
         icon="nan-icon-arrow-left"
       >
@@ -14,44 +12,37 @@
       </NanButton>
       <NanButton
         @click="onClick"
-        @focus="onClick"
-        @mouseover="onClick"
         :outline="true"
         theme="danger"
+        size="small"
         disabled
         >你好</NanButton
       >
-      <NanButton
-        @click="onClick"
-        @focus="onClick"
-        @mouseover="onClick"
-        theme="warning"
-        :click="false"
-        loading
+      <NanButton @click="onClick" theme="warning" unclick size="medium" loading
         >你好</NanButton
       >
-      <NanButton @click="onClick" @focus="onClick" @mouseover="onClick"
+      <NanButton @click="onClick" size="large" unclick
         ><i class="nan-icon-download"></i>亮度你好</NanButton
       >
-      <NanButton :outline="true" theme="dark" size="large" round
+      <NanButton :outline="true" theme="dark" size="medium" round
         >暗黑</NanButton
       >
     </div>
     <div>
       <nan-button-group>
-        <nan-button icon="nan-icon-arrow-left" theme="secondary" :click="false"
+        <nan-button icon="nan-icon-arrow-left" theme="secondary" unclick
           >上一页</nan-button
         >
-        <nan-button theme="secondary" :click="false">
+        <nan-button theme="secondary" unclick>
           下一页
           <i class="nan-icon-arrow-right nan-icon--right"></i>
         </nan-button>
       </nan-button-group>
       <nan-button-group>
-        <nan-button theme="secondary" :click="false">1</nan-button>
-        <nan-button theme="secondary" :click="false">2</nan-button>
-        <nan-button theme="secondary" :click="false">3</nan-button>
-        <nan-button theme="secondary" :click="false">4</nan-button>
+        <nan-button theme="secondary" unclick>1</nan-button>
+        <nan-button theme="secondary" unclick>2</nan-button>
+        <nan-button theme="secondary" unclick>3</nan-button>
+        <nan-button theme="secondary" unclick>4</nan-button>
       </nan-button-group>
     </div>
   </div>
@@ -68,7 +59,7 @@ export default {
   },
   setup() {
     const onClick = () => {
-      console.log("dianji ");
+      // console.log("dianji55 ");
     };
     return { onClick };
   },
