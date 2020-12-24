@@ -1,5 +1,9 @@
 <template>
-  <button :class="{checked:value}" @click="toggle">
+  <button
+    class="nan-switch"
+    :class="{ 'nan-switch-checked': value }"
+    @click="toggle"
+  >
     <span></span>
   </button>
 </template>
@@ -21,10 +25,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $height: 22px;
 $height2: $height - 4px;
-button {
+.nan-switch {
   height: $height;
   width: $height * 2;
   border: none;
@@ -32,6 +36,7 @@ button {
   border-radius: $height/2;
   transition: all 0.2s;
   position: relative;
+  cursor: pointer;
   span {
     position: absolute;
     top: 2px;
@@ -42,10 +47,10 @@ button {
     border-radius: $height2/2;
     transition: all 0.2s;
   }
-  &.checked {
+  &.nan-switch-checked {
     background: #1890ff;
   }
-  &.checked > span {
+  &.nan-switch-checked > span {
     left: calc(100% - #{$height2} - 2px);
   }
   &:focus {
@@ -56,7 +61,7 @@ button {
       width: $height2 + 4px;
     }
   }
-  &.checked:active {
+  &.nan-switch-checked:active {
     > span {
       width: $height2 + 4px;
       margin-left: -4px;
