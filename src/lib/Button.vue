@@ -18,7 +18,12 @@
   >
     <i class="nan-icon-loading" v-if="loading"></i>
     <i :class="icon" v-if="icon && !loading"></i>
-    <span v-if="$slots.default">
+    <div v-if="theme === 'cyberpunk'">
+      <div class="glitch"></div>
+      <div class="text" :data-text="cyberpunkText">{{ cyberpunkText }}</div>
+      <span class="platform">R25</span>
+    </div>
+    <span v-if="$slots.default && theme != 'cyberpunk'">
       <slot></slot>
     </span>
   </button>
@@ -49,6 +54,7 @@ export default {
             "success",
             "danger",
             "warning",
+            "cyberpunk",
           ].indexOf(val) !== -1
         );
       },
@@ -65,6 +71,7 @@ export default {
       type: Boolean,
       default: false,
     },
+    cyberpunkText: String,
   },
   setup(props, context) {
     // console.log({ ...props });
