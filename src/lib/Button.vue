@@ -10,7 +10,7 @@
       {
         'is-round': round,
         'is-circle': circle,
-        'is-click': !unclick,
+        'is-click': !unclick && !buttonDisabled,
       },
     ]"
     :autofocus="autofocus"
@@ -30,8 +30,8 @@
 </template>
 
 <script lang="ts">
-import { computed } from "vue";
-export default {
+import { computed, defineComponent } from "vue";
+export default defineComponent({
   // inheritAttrs: false, //继承属性
   props: {
     icon: {
@@ -92,7 +92,7 @@ export default {
     // props支持string以外的类型，attrs只有string类型
     return { outlineClass, btnSize, buttonDisabled };
   },
-};
+});
 </script>
 
 <style lang='scss'>

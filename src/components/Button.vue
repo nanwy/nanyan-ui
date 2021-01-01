@@ -56,9 +56,11 @@
 
 <script lang='ts'>
 // import Button from '../../../Woo-UI/src/Button/Button.vue';
+import { defineComponent } from "vue";
+
 import NanButtonGroup from "/@/lib/ButtonGroup.vue";
 import NanButton from "/@/lib/Button.vue";
-export default {
+export default defineComponent({
   components: {
     NanButton,
     NanButtonGroup,
@@ -69,7 +71,7 @@ export default {
     };
     return { onClick };
   },
-};
+});
 </script>
 
 <style lang='scss'>
