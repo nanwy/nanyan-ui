@@ -8,6 +8,9 @@
     /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
     url('iconfont.svg?t=1596972952347#iconfont') format('svg');
   /* iOS 4.1- */
+  font-weight: normal;
+  // font-display: $--font-display;
+  font-style: normal;
 }
 
 [class^="nan-icon-"],
@@ -15,7 +18,7 @@
   font-family: "iconfont" !important;
   speak: none;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   font-variant: normal;
   text-transform: none;
   line-height: 1;

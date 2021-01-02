@@ -5,16 +5,36 @@
       <h1>一个简单的轮子</h1>
       <p class="actions">
         <a href>Github</a>
-        <router-link to="/doc">开始上手</router-link>
+        <!-- <router-link to="/doc">开始上手</router-link> -->
+        <NanButton
+          theme="cyberpunk"
+          size="small"
+          round
+          cyberpunkText="开始上手"
+          @click="routerClick"
+        ></NanButton>
       </p>
     </div>
   </div>
 </template>
 <script lang="ts">
 import Topnav from "../components/Topnav.vue";
+import NanButton from "/@/lib/Button.vue";
+import { useRouter } from "vue-router";
 export default {
   components: {
     Topnav,
+    NanButton,
+  },
+  setup(props) {
+    const router = useRouter();
+    const routerClick = () => {
+      router.push("/doc");
+    };
+
+    return {
+      routerClick,
+    };
   },
 };
 </script>

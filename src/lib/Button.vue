@@ -1,7 +1,4 @@
 <template>
-  <!-- <button v-bind="$attrs"> 全部属性 
-      <slot />
-    </button> -->
   <button
     class="nan-btn"
     :class="[
@@ -18,11 +15,11 @@
   >
     <i class="nan-icon-loading" v-if="loading"></i>
     <i :class="icon" v-if="icon && !loading"></i>
-    <div v-if="theme === 'cyberpunk'">
+    <template v-if="theme === 'cyberpunk'">
       <div class="glitch"></div>
       <div class="text" :data-text="cyberpunkText">{{ cyberpunkText }}</div>
       <span class="platform">R25</span>
-    </div>
+    </template>
     <span v-if="$slots.default && theme != 'cyberpunk'">
       <slot></slot>
     </span>
@@ -30,8 +27,21 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from "vue";
+import { computed, defineComponent, PropType } from "vue";
+
+type IButtonType = PropType<
+  | "primary"
+  | "success"
+  | "warning"
+  | "danger"
+  | "cyberpunk"
+  | "light"
+  | "light"
+  | "secondary"
+  | "dark"
+>;
 export default defineComponent({
+  name: "NanButton",
   // inheritAttrs: false, //继承属性
   props: {
     icon: {
@@ -41,14 +51,14 @@ export default defineComponent({
     loading: Boolean,
     autofocus: Boolean,
     theme: {
-      type: String,
+      type: String as IButtonType,
       default: "primary",
-      validator(val) {
+      validator(val: string) {
         return (
           [
             "dark",
             "secondary",
-            "info",
+            "light",
             "primary",
             "light",
             "success",
@@ -63,8 +73,9 @@ export default defineComponent({
     size: {
       type: String,
       defult: "small",
+      validator: (val: string) => ["large", "medium", "small"].includes(val),
     },
-    outline: Boolean,
+    outline: { type: Boolean },
     round: Boolean,
     circle: Boolean,
     unclick: {
@@ -73,12 +84,12 @@ export default defineComponent({
     },
     cyberpunkText: String,
   },
-  setup(props, context) {
+  setup(props: any, context) {
     // console.log({ ...props });
     // console.log({ ...context.attrs });
     // const {size,onClick,onMouseOver} = context.attrs
     const { ...rest } = context.attrs; //分离属性
-
+    props.theme;
     // 创建响应式对象
     const outlineClass = computed(() => (props.outline ? "outline" : ""));
     const btnSize = computed(() => props.size);

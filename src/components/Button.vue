@@ -8,7 +8,6 @@
         circle
         icon="nan-icon-arrow-left"
       >
-        <!-- <i class="nan-icon-download"></i>-->
       </NanButton>
       <NanButton
         @click="onClick"
@@ -32,11 +31,16 @@
         size="small"
         round
         cyberpunkText="开始你的表演"
-      ></NanButton>
+        >开始</NanButton
+      >
     </div>
     <div>
       <nan-button-group>
-        <nan-button icon="nan-icon-arrow-left" theme="secondary" unclick
+        <nan-button
+          icon="nan-icon-arrow-left"
+          theme="secondary"
+          unclick
+          @click="prevClick"
           >上一页</nan-button
         >
         <nan-button theme="secondary" unclick>
@@ -67,9 +71,12 @@ export default defineComponent({
   },
   setup() {
     const onClick = () => {
-      // console.log("dianji55 ");
+      console.log("dianji55 ");
     };
-    return { onClick };
+    const prevClick = () => {
+      console.log("dianji");
+    };
+    return { onClick, prevClick };
   },
 });
 </script>

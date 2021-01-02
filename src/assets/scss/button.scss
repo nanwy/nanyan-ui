@@ -347,9 +347,9 @@ $_luminance-list: .0008 .001 .0011 .0013 .0015 .0017 .002 .0022 .0025 .0027 .003
   }
 
   &.is-circle {
-    width: 40px !important;
-    height: 40px !important;
-    padding: 0 !important;
+    // width: 40px !important;
+    // height: 40px !important;
+    // padding: 12px;
     border-radius: 50%;
     padding: 12px;
     line-height: 1;
@@ -413,9 +413,9 @@ $_luminance-list: .0008 .001 .0011 .0013 .0015 .0017 .002 .0022 .0025 .0027 .003
   }
 
   &.is-circle {
-    width: 40px !important;
-    height: 40px !important;
-    padding: 0 !important;
+    // width: 40px !important;
+    // height: 40px !important;
+    padding: 12px;
     border-radius: 50%;
     // padding: 11px;
     padding: 12px;
