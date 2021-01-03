@@ -17,7 +17,7 @@
         disabled
         >你好</NanButton
       >
-      <NanButton @click="onClick" theme="warning" unclick size="medium" loading
+      <NanButton @click="onClick" theme="danger" unclick size="medium" loading
         >你好</NanButton
       >
       <NanButton @click="onClick" size="large" unclick
@@ -31,8 +31,7 @@
         size="small"
         round
         cyberpunkText="开始你的表演"
-        >开始</NanButton
-      >
+      ></NanButton>
     </div>
     <div>
       <nan-button-group>
@@ -59,11 +58,10 @@
 </template>
 
 <script lang='ts'>
-// import Button from '../../../Woo-UI/src/Button/Button.vue';
 import { defineComponent } from "vue";
 
-import NanButtonGroup from "/@/lib/ButtonGroup.vue";
-import NanButton from "/@/lib/Button.vue";
+import NanButtonGroup from "/@/lib/Button/buttonGroup.vue";
+import NanButton from "/@/lib/Button/button.vue";
 export default defineComponent({
   components: {
     NanButton,

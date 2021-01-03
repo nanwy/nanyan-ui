@@ -19,7 +19,7 @@
 </template>
 <script lang="ts">
 import Topnav from "../components/Topnav.vue";
-import NanButton from "/@/lib/Button.vue";
+import NanButton from "/@/lib/Button/Button.vue";
 import { useRouter } from "vue-router";
 export default {
   components: {
