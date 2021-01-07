@@ -36,7 +36,6 @@ type IButtonType = PropType<
   | "danger"
   | "cyberpunk"
   | "light"
-  | "light"
   | "secondary"
   | "dark"
 >;
@@ -60,7 +59,6 @@ export default defineComponent({
             "secondary",
             "light",
             "primary",
-            "light",
             "success",
             "danger",
             "warning",
@@ -88,8 +86,8 @@ export default defineComponent({
     // console.log({ ...props });
     // console.log({ ...context.attrs });
     // const {size,onClick,onMouseOver} = context.attrs
-    const { ...rest } = context.attrs; //分离属性
-    props.theme;
+    // const { ...rest } = context.attrs; //分离属性
+    // props.theme;
     // 创建响应式对象
     const outlineClass = computed(() => (props.outline ? "outline" : ""));
     const btnSize = computed(() => props.size);

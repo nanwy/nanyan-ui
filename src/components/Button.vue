@@ -27,7 +27,7 @@
         >暗黑</NanButton
       >
       <NanButton
-        theme="cyberpunk"
+        theme="dark"
         size="small"
         round
         cyberpunkText="开始你的表演"
