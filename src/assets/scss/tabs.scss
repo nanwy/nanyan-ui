@@ -1,0 +1,50 @@
+.nan-tabs {
+  &-nav {
+    display: flex;
+    color: $color;
+    border-bottom: 1px solid $border-color;
+    position: relative;
+    &-item {
+      padding: 8px;
+      margin: 0 8px;
+      cursor: pointer;
+      &.disabled {
+        color: #ccc;
+        cursor: not-allowed;
+      }
+      &:first-child {
+        margin-left: 0;
+      }
+      &.selected {
+        color: $blue;
+      }
+    }
+    &-indicator {
+      position: absolute;
+      height: 3px;
+      background: $blue;
+      left: 0;
+      bottom: -1px;
+      transition: all 0.25s cubic-bezier(1, 1.67, 0.21, 0.84);
+    }
+  }
+  &-content {
+    padding: 20px 8px;
+  }
+  @keyframes kaite-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes button-hover {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-3px);
+    }
+  }
+}

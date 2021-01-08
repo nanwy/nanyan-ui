@@ -4,7 +4,7 @@ import Doc from "./views/Doc.vue";
 import Switch from "./components/SwitchDemo.vue";
 import Button from "./components/Button.vue";
 import Dialog from "./components/Dialog.vue";
-import Tabs from "./components/Tabs.vue";
+import TabsDemo from "./components/TabsDemo.vue";
 import DocDemo from "./components/DocDemo.vue";
 // const history = createWebHashHistory();
 // const router:Array<RouteLocationRaw> = [
@@ -38,7 +38,7 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: "tabs",
-        component: Tabs,
+        component: TabsDemo,
       },
     ],
   },

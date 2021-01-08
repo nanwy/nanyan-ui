@@ -1,42 +1,55 @@
-<template>
-  <template v-if="visible">
-    <teleport to="body">
-      <div class="nan-dialog-overlay" @click="onClickOverlay"></div>
-      <div class="nan-dialog-wrapper">
-        <div class="nan-dialog">
-          <div class="nan-dialog-header">
-            <span class="nan-dialog-title">
-              {{ title }}
-            </span>
-            <button class="nan-dialog-close" @click="closeClick">
-              <i class="nan-icon-close"></i>
-            </button>
-          </div>
-          <div class="nan-dialog-body">
-            <slot></slot>
-          </div>
-          <div v-if="$slots.footer" class="nan-dialog-footer">
-            <slot name="footer"></slot>
+
+  <template>
+  <teleport to="body">
+    <transition
+      name="dialog-fade"
+      @after-enter="afterEnter"
+      @after-leave="afterLeave"
+      @before-leave="beforeLeave"
+    >
+      <div
+        class="nan-dialog-overlay"
+        v-if="visible"
+        @click.self="onClickOverlay"
+      >
+        <div class="nan-dialog-wrapper">
+          <div class="nan-dialog">
+            <div class="nan-dialog-header">
+              <span class="nan-dialog-title">
+                {{ title }}
+              </span>
+              <button
+                class="nan-dialog-close"
+                v-if="closeBtn"
+                @click="closeClick"
+              >
+                <i class="nan-icon-close"></i>
+              </button>
+            </div>
+            <div class="nan-dialog-body">
+              <slot></slot>
+            </div>
+            <div v-if="$slots.footer" class="nan-dialog-footer">
+              <slot name="footer"></slot>
+            </div>
           </div>
         </div>
       </div>
-    </teleport>
-  </template>
+    </transition>
+  </teleport>
 </template>
 
 
 <script lang='ts'>
-import { defineComponent, watch, ref, onMounted } from "vue";
+import { defineComponent, watch, ref, isRef, onMounted } from "vue";
+// import type { Ref } from 'vue';
+import useRestoreActive from "./index";
 import NanButton from "../Button/button.vue";
-function close() {
-  // if (this.willClose && !this.willClose()) return;
-  console.log("点击了");
-}
 
 const CLOSE_EVENT = "close";
 export default defineComponent({
   props: {
-    visible: {
+    visible1: {
       type: Boolean,
       default: false,
     },
@@ -52,52 +65,88 @@ export default defineComponent({
       type: String,
       default: "提示",
     },
+    closeBtn: {
+      type: Boolean,
+      default: true,
+    },
     closed: {},
   },
   components: {
     NanButton,
   },
-  emits: [CLOSE_EVENT],
+  emits: ["opend", "update:modelValue", "closed"],
 
   setup(props, context) {
     const visible = ref(false);
     function open() {
       visible.value = true;
+      console.log("visible.value: ", visible);
     }
+    function doClose() {
+      visible.value = false;
+    }
+
     const closeClick = () => {
       // context.emit("update:visible", false);
+      doClose();
+      console.log("visible: ", visible);
     };
-    const onClickOverlay = () => {
+    const onClickOverlay = (e) => {
+      console.log("点击了", e);
       if (!props.cancelOnClickOverlay) {
         closeClick();
       }
     };
     onMounted(() => {
-      console.log(props.modelValue);
+      console.log(props.modelValue, "true");
       if (props.modelValue) {
         visible.value = true;
+        open();
       }
     });
+    function afterLeave() {
+      console.log("触发");
+      context.emit("update:modelValue", false);
+      context.emit("closed");
+    }
+    //   function useRestoreActive (toggle: Ref<boolean>, initialFocus?: Ref<HTMLElement>) => {
+    // let previousActive: HTMLElement
+    // watch(() => toggle.value, val => {
+    //   if (val) {
+    //     previousActive = document.activeElement as HTMLElement
+    //     if (isRef(initialFocus)) {
+    //       initialFocus.value.focus?.()
+    //     }
+    //   } else {
+    //     if (process.env.NODE_ENV === 'testing') {
+    //       previousActive.focus.call(previousActive)
+    //     } else {
+    //       previousActive.focus()
+    //     }
+    //   }
+    // })
+    useRestoreActive(visible);
     watch(
       () => props.modelValue,
       (val) => {
+        console.log("wacth");
         if (val) {
-          console.log(val);
-          //   closed.value = false
-          //   rendered.value = true // enables lazy rendering
+          // closed.value = false
           open();
-          //   ctx.emit(OPEN_EVENT)
-          //   zIndex.value = props.zIndex ? zIndex.value++ : PopupManager.nextZIndex()
-          //   // this.$el.addEventListener('scroll', this.updatePopper)
-          //   nextTick(() => {
-          //     if (targetRef.value) {
-          //       targetRef.value.scrollTop = 0
-          //     }
-          //   })
-          // } else {
+          context.emit("opend");
+          // rendered.value = true // enables lazy rendering
+          // ctx.emit(OPEN_EVENT)
+          // zIndex.value = props.zIndex ? zIndex.value++ : PopupManager.nextZIndex()
+          // // this.$el.addEventListener('scroll', this.updatePopper)
+          // nextTick(() => {
+          //   if (targetRef.value) {
+          //     targetRef.value.scrollTop = 0
+          //   }
+          // })
+        } else {
           // this.$el.removeEventListener('scroll', this.updatePopper
           if (visible.value) {
-            close();
+            doClose();
           }
         }
       }
@@ -107,10 +156,11 @@ export default defineComponent({
       closeClick,
       onClickOverlay,
       visible,
+      afterLeave,
     };
   },
 });
 </script>
 
-<style>
+<style lang='scss' scoped>
 </style>

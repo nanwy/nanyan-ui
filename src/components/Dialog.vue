@@ -1,17 +1,17 @@
 <template>
   <div>
     <div>
-      <nan-button @click="toggle">打开dialog</nan-button>
-      <nan-dialog v-model="x" title="标题">
+      <nan-button @click="x = true">打开dialog</nan-button>
+      <nan-dialog v-model="x" title="标题" cancelOnClickOverlay>
         <strong>加粗的内容</strong>
         <template #footer>
           <nan-button @click="toggle">确定</nan-button>
-          <nan-button theme="light" @click="toggle">取消</nan-button>
+          <nan-button theme="light" @click="x = false">取消</nan-button>
         </template>
       </nan-dialog>
     </div>
     <div>
-      <nan-button @click="showDialog">show</nan-button>
+      <nan-button @click="x = false">show</nan-button>
     </div>
   </div>
 </template>
@@ -29,7 +29,7 @@ export default defineComponent({
   setup() {
     const x = ref(false);
     const toggle = () => {
-      x.value = !x.value;
+      x.value = true;
       console.log("x.value: ", x.value);
     };
     const showDialog = () => {
