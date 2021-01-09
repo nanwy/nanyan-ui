@@ -3,8 +3,8 @@
     Tabs组件
     <div class="nan-tabs-nav">
       <div
-        class="nan-tab-nan-item"
-        :class="{ 'is-active': 1 }"
+        class="nan-tabs-nav-item"
+        :class="{ 'is-active': active === index, 'is-disabled': disabled }"
         v-for="(t, index) in titles"
         @click="tabClick(index)"
         :key="index"
@@ -29,11 +29,20 @@
 import { provide, ref } from "vue";
 import Tab from "./tab.vue";
 export default {
+  props: {
+    disabled: Boolean,
+  },
   setup(props, context) {
     // provide("tabName", 1);
-    console.log({ ...context });
+    const currentName = ref(props.modelValue || props.activeName || "0");
+    provide("rootTabs", {
+      props,
+      currentName,
+    });
+    console.log(".....", { ...context.slots.default() });
     const defaults = context.slots.default();
-    console.log(defaults[0].type === Tab);
+    console.log("defaults: ", defaults);
+    // console.log(defaults[0].type === Tab);
     let active = ref(0);
     const tabClick = (index) => {
       console.log(index);
@@ -42,10 +51,11 @@ export default {
 
     defaults.forEach((type) => {
       if (type.type !== Tab) {
-        throw new Error("Tabs 子组件必须是 Tab");
+        // throw new Error("Tabs 子组件必须是 Tab");
       }
     });
     const titles = defaults.map((i) => i.props?.title);
+    console.log("titles: ", titles);
     return {
       defaults,
       titles,

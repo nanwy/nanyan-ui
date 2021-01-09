@@ -26,12 +26,9 @@
       <NanButton :outline="true" theme="dark" size="medium" round
         >暗黑</NanButton
       >
-      <NanButton
-        theme="dark"
-        size="small"
-        round
-        cyberpunkText="开始你的表演"
-      ></NanButton>
+      <NanButton theme="dark" size="small" round cyberpunkText="开始你的表演"
+        >i am dark</NanButton
+      >
     </div>
     <div>
       <nan-button-group>

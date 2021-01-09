@@ -1,5 +1,5 @@
 <template>
-  <div :class="`is${active}`" v-show="tabName === active">
+  <div v-show="tabName === active">
     tab组件
     {{ active }}
     <slot />
@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { defineComponent, inject } from "vue";
+import { defineComponent, inject, ref } from "vue";
 export default defineComponent({
   props: {
     tabName: {
@@ -16,12 +16,19 @@ export default defineComponent({
     active: {
       type: Number,
     },
+    name: {
+      type: String,
+      default: "",
+    },
   },
   setup(props, context) {
     // let tabName = inject("tabName");
     // tabName++;
+    const index = ref(null);
+    const rootTabs = inject("rootTabs");
+    console.log(rootTabs.currentName.value, props.name || index.value);
     const name = props.tabName;
-    console.log(props.tabName, { ...context.attrs });
+    console.log(props, { ...context.attrs });
     return {
       name,
     };

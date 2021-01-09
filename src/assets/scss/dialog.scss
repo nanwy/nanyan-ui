@@ -4,9 +4,10 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  // right: 0;
+  // bottom: 0;
   // width: 100vw;
+  width: 100%;
   height: 100%;
   background: rgba(0,0,0,.3);
   z-index: 200;
@@ -18,9 +19,10 @@
   border-radius: $border-radius-sm;
   box-shadow: 0 0px 3px fade_out(black, 0.5);
   min-width: 15em;
-  width: 50%;
+  width: 30%;
   padding: 5px;
   z-index: 2005;
+  margin: 0 auto 50px;
   &-header{
     padding: 20px 20px 10px;
  
@@ -57,9 +59,9 @@
   }
   &-wrapper {
     position: relative;
-    // margin-top: 15vh;
-    width: 30%;
-    margin: 15vh auto 50px;
+    margin-top: 15vh;
+    // width: 30%;
+    
     // position: fixed;
     // left: 50%;
     // top: 50%;

@@ -1,28 +1,41 @@
 .nan-tabs {
   &-nav {
     display: flex;
-    color: $color;
-    border-bottom: 1px solid $border-color;
+    color: #333;
     position: relative;
+    &::after{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      border-bottom: 1px solid #e4e7ed;
+    }
     &-item {
       padding: 8px;
       margin: 0 8px;
       cursor: pointer;
-      &.disabled {
-        color: #ccc;
-        cursor: not-allowed;
+      &:hover{
+        color: #409eff;
       }
+
       &:first-child {
         margin-left: 0;
       }
-      &.selected {
-        color: $blue;
-      }
+
+    }
+    .is-active {
+      color: #409eff;
+    }
+    .is-disabled {
+      color: #ccc;
+      cursor: not-allowed;
     }
     &-indicator {
       position: absolute;
       height: 3px;
-      background: $blue;
+      background: #409eff;
       left: 0;
       bottom: -1px;
       transition: all 0.25s cubic-bezier(1, 1.67, 0.21, 0.84);
