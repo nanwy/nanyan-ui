@@ -1,7 +1,7 @@
 <template>
   <div class="topnav">
-    <span class="toggleAside" @click="toggleSilde"></span>
-    <div class="logo"></div>
+    <span class="toggleAside" v-if="meunVisible" @click="toggleSilde"></span>
+    <router-link to="/" class="logo"></router-link>
     <div class="meun">MEUN</div>
   </div>
 </template>
@@ -9,6 +9,12 @@
 <script lang="ts">
 import { inject, Ref } from "vue";
 export default {
+  props: {
+    meunVisible: {
+      type: Boolean,
+      default: false,
+    },
+  },
   setup() {
     const asideVisible = inject<Ref<boolean>>("asideVisible");
     console.log("asideVisible: ", asideVisible.value);
@@ -21,9 +27,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 .topnav {
-  background: rgb(0, 0, 0);
+  // background: rgb(0, 0, 0);
+  // padding: 0 10px;
   display: flex;
-  padding: 16px;
+  // padding: 16px;
   position: fixed;
   top: 0;
   left: 0;
@@ -31,6 +38,8 @@ export default {
   z-index: 10;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+  color: #cdcdcd;
   > .logo {
     max-width: 6em;
     margin-right: auto;

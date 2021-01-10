@@ -6,11 +6,15 @@ import App from "./App.vue";
 import router from "./router";
 
 // import "/@/assets/scss/style.scss"
-import "/@/assets/scss/index.scss"
-import "/@/assets/scss/icon/iconfont.scss"
+import "../src/assets/scss/index.scss"
+import "../src/assets/scss/icon/iconfont.scss"
+
+
+import 'github-markdown-css'
 // router.afterEach(() => {
 //   console.log("切换路由");
 // });
 const app = createApp(App);
 app.use(router);
 app.mount("#app");
+// app.component('Markdown', Markdown)

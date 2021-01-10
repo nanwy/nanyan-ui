@@ -1,8 +1,20 @@
 <template>
   <div class="layout">
-    <Topnav class="nav" />
+    <Topnav class="nav" meunVisible />
     <div class="content">
       <aside v-if="asideVisible">
+        <h2>文档</h2>
+        <ol>
+          <li>
+            <router-link to="/doc/intro">介绍 </router-link>
+          </li>
+          <li>
+            <router-link to="/doc/start">开始 </router-link>
+          </li>
+          <li>
+            <router-link to="/doc/install">安装 </router-link>
+          </li>
+        </ol>
         <h2>组件列表</h2>
         <ol>
           <li>
@@ -45,9 +57,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.router-link-active {
+  color: #fcee0a;
+}
 .layout {
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
   height: 100vh;
   > .nav {
     flex-shrink: 0;
@@ -55,7 +70,7 @@ export default {
   > .content {
     flex-grow: 1;
     padding-top: 80px;
-    padding-left: 156px;
+    padding-left: 190px;
     @media (max-width: 500px) {
       padding-left: 0;
     }

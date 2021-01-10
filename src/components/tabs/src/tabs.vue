@@ -161,6 +161,7 @@ export default defineComponent({
     const setPaneInstances = (isForceUpdate = false) => {
       if (ctx.slots.default) {
         const children = instance.subTree.children;
+        console.log("instance: ", instance);
 
         const content = Array.from(children as ArrayLike<VNode>).find(
           ({ props }) => {
@@ -184,6 +185,7 @@ export default defineComponent({
 
         if (isForceUpdate || panesChanged) {
           panes.value = paneInstanceList;
+          console.log("paneInstanceList: ", panes);
         }
       } else if (panes.value.length !== 0) {
         panes.value = [];
@@ -197,6 +199,7 @@ export default defineComponent({
     };
 
     const setCurrentName = (value) => {
+      console.log(value);
       if (currentName.value !== value && props.beforeLeave) {
         const before = props.beforeLeave(value, currentName.value);
         if (before && (before as Promise<void>).then) {

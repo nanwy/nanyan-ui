@@ -18,8 +18,8 @@
 
 <script lang='ts'>
 import { defineComponent, ref } from "vue";
-import NanDialog from "/@/lib/dialog/dialog.vue";
-import NanButton from "/@/lib/Button/button.vue";
+import NanDialog from "../lib/dialog/dialog.vue";
+import NanButton from "../lib/Button/button.vue";
 import { openDialog } from "../lib/dialog/openDialog";
 export default defineComponent({
   components: {

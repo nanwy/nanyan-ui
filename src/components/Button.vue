@@ -57,8 +57,8 @@
 <script lang='ts'>
 import { defineComponent } from "vue";
 
-import NanButtonGroup from "/@/lib/Button/buttonGroup.vue";
-import NanButton from "/@/lib/Button/button.vue";
+import NanButtonGroup from "../lib/Button/buttonGroup.vue";
+import NanButton from "../lib/Button/button.vue";
 export default defineComponent({
   components: {
     NanButton,
