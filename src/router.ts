@@ -5,11 +5,13 @@ import Switch from "./components/switch/SwitchPage.vue";
 import Button from "./components/Button.vue";
 import Dialog from "./components/Dialog.vue";
 import TabsDemo from "./components/TabsDemo.vue";
-import DocDemo from "./components/DocDemo.vue";
+import intro from './markdown/intro.md'
+import start from './markdown/start.md'
+import install from './markdown/install.md'
 import Markdown from './components/Markdown.vue'
 import { h } from "vue";
 const md = (path) => h(Markdown, {
-  path,
+  content: path,
   key: path
 })
 // const history = createWebHashHistory();
@@ -32,15 +34,15 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: 'intro',
-        component: md('../markdown/intro.md')
+        component: md(intro)
       },
       {
         path: 'start',
-        component: md('../markdown/install.md')
+        component: md(start)
       },
       {
         path: 'install',
-        component: md('../markdown/install.md')
+        component: md(install)
       },
       {
         path: "switch",

@@ -7,18 +7,9 @@ import { ref } from "vue";
 // import md from "../markdown/intro.md";
 export default {
   props: {
-    path: {
+    content: {
       type: String,
     },
-  },
-  setup(props) {
-    const content = ref<string>(null);
-    import(props.path).then((res) => {
-      content.value = res.default;
-    });
-    return {
-      content,
-    };
   },
 };
 </script>

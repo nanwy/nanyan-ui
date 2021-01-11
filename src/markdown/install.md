@@ -1,15 +1,5 @@
 # 安装
 
-打开终端运行下列命令：
+目前项目还未完善,后续会上传到 npm 上,敬请期待...
 
-```
-npm install nan-ui
-```
-
-或
-
-```
-yarn add nan-ui
-```
-
-下一节：[开始使用](#/doc/get-started)
+下一节：[开始使用](#/doc/start)

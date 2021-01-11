@@ -8,6 +8,7 @@
       </p>
     </section>
     <Demo :component="SwitchDemo" />
+    <Demo :component="SwitchDemo1" />
     <!-- <component :is="SwitchDemo"></component>
     <div class="code">
       {{ SwitchDemo.__sourceCode }}
@@ -17,6 +18,7 @@
 
 <script>
 import SwitchDemo from "./SwitchDemo/SwitchDemo.vue";
+import SwitchDemo1 from "./SwitchDemo/SwitchDemo1.vue";
 import Demo from "../Demo.vue";
 console.log(SwitchDemo);
 export default {
@@ -24,7 +26,7 @@ export default {
     Demo,
   },
   setup(props) {
-    return { SwitchDemo };
+    return { SwitchDemo, SwitchDemo1 };
   },
 };
 </script>

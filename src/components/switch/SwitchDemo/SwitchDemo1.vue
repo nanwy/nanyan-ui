@@ -1,3 +1,6 @@
+<demo>
+可以禁用
+</demo>
 <template>
   <div>
     <Switch v-model:value="bool" disabled>
