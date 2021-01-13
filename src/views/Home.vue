@@ -92,7 +92,7 @@ export default {
     right: 0;
     bottom: 0;
     height: 25px;
-    background: url("../assets/razor-top.svg") repeat-x top;
+    background: url("https://img.nanwayan.cn/razor-top.svg") repeat-x top;
   }
   > .actions {
     padding: 15px 0;

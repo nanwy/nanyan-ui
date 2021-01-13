@@ -2,9 +2,9 @@ import { createWebHashHistory, createRouter, RouteRecordRaw } from "vue-router";
 import Home from "./views/Home.vue";
 import Doc from "./views/Doc.vue";
 import Switch from "./components/switch/SwitchPage.vue";
-import Button from "./components/Button.vue";
+import Button from "./components/button/ButtonPage.vue";
 import Dialog from "./components/Dialog.vue";
-import TabsDemo from "./components/TabsDemo.vue";
+import Tabs from "./components/tabs/TabsPage.vue";
 import intro from './markdown/intro.md'
 import start from './markdown/start.md'
 import install from './markdown/install.md'
@@ -58,7 +58,7 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: "tabs",
-        component: TabsDemo,
+        component: Tabs,
       },
     ],
   },

@@ -108,7 +108,7 @@ $border-color: #333;
   border: 1px solid $border-color;
   border-radius: 5px;
   margin: 16px 0 32px;
-  max-width: 500px;
+  max-width: 600px;
   > h2 {
     font-size: 20px;
     padding: 8px 16px;

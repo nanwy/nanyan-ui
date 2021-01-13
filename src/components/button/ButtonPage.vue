@@ -1,5 +1,21 @@
 <template>
-  <div class="btn-demo">
+  <div>
+    <h1 class="first-title">Button 组件示例</h1>
+    <section class="second-title">
+      <h2>基础用法</h2>
+      <p><span>Tabs</span>里必须是<span>Tab</span>组件</p>
+    </section>
+    <section class="second-title">
+      <Demo :component="ButtonDemo" />
+    </section>
+    <h1 class="first-title">Button 组件示例</h1>
+    <section class="second-title">
+      <h2>基础用法</h2>
+      <p><span>Tabs</span>里必须是<span>Tab</span>组件</p>
+    </section>
+    <section class="second-title">
+      <Demo :component="ButtonDemo1" />
+    </section>
     <div>
       <NanButton
         @click="onClick"
@@ -57,12 +73,17 @@
 <script lang='ts'>
 import { defineComponent } from "vue";
 
-import NanButtonGroup from "../lib/Button/buttonGroup.vue";
-import NanButton from "../lib/Button/button.vue";
+import NanButtonGroup from "../../lib/Button/buttonGroup.vue";
+import NanButton from "../../lib/Button/button.vue";
+
+import ButtonDemo from "./ButtonCase/ButtonDemo.vue";
+import ButtonDemo1 from "./ButtonCase/ButtonDemo1.vue";
+import Demo from "../Demo.vue";
 export default defineComponent({
   components: {
     NanButton,
     NanButtonGroup,
+    Demo,
   },
   setup() {
     const onClick = () => {
@@ -71,7 +92,7 @@ export default defineComponent({
     const prevClick = () => {
       console.log("dianji");
     };
-    return { onClick, prevClick };
+    return { onClick, prevClick, ButtonDemo, ButtonDemo1 };
   },
 });
 </script>

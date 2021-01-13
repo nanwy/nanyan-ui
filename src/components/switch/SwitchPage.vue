@@ -8,6 +8,12 @@
       </p>
     </section>
     <Demo :component="SwitchDemo" />
+    <section class="second-title">
+      <h2>禁用属性</h2>
+      <p>
+        在<span>Switch</span>添加一个<span>disabled</span>用来<span>禁用Switch</span>组件
+      </p>
+    </section>
     <Demo :component="SwitchDemo1" />
     <!-- <component :is="SwitchDemo"></component>
     <div class="code">
