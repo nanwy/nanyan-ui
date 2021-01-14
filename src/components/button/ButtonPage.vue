@@ -3,18 +3,25 @@
     <h1 class="first-title">Button 组件示例</h1>
     <section class="second-title">
       <h2>基础用法</h2>
-      <p><span>Tabs</span>里必须是<span>Tab</span>组件</p>
+      <p>普通的<span>button</span><span></span></p>
     </section>
     <section class="second-title">
       <Demo :component="ButtonDemo" />
     </section>
-    <h1 class="first-title">Button 组件示例</h1>
     <section class="second-title">
-      <h2>基础用法</h2>
-      <p><span>Tabs</span>里必须是<span>Tab</span>组件</p>
+      <h2>进阶用法</h2>
+      <p>边框<span>button</span></p>
     </section>
     <section class="second-title">
       <Demo :component="ButtonDemo1" />
+    </section>
+    <section class="second-title">
+      <h2>禁用button</h2>
+      <p>可以<span>loading</span></p>
+      <p>或者<span>disabled</span></p>
+    </section>
+    <section class="second-title">
+      <Demo :component="ButtonDemo2" />
     </section>
     <div>
       <NanButton
@@ -78,6 +85,7 @@ import NanButton from "../../lib/Button/button.vue";
 
 import ButtonDemo from "./ButtonCase/ButtonDemo.vue";
 import ButtonDemo1 from "./ButtonCase/ButtonDemo1.vue";
+import ButtonDemo2 from "./ButtonCase/ButtonDemo2.vue";
 import Demo from "../Demo.vue";
 export default defineComponent({
   components: {
@@ -92,7 +100,7 @@ export default defineComponent({
     const prevClick = () => {
       console.log("dianji");
     };
-    return { onClick, prevClick, ButtonDemo, ButtonDemo1 };
+    return { onClick, prevClick, ButtonDemo, ButtonDemo1, ButtonDemo2 };
   },
 });
 </script>
