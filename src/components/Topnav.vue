@@ -45,7 +45,7 @@ export default {
     margin-right: auto;
     width: 50px;
     height: 50px;
-    background-image: url("../assets/img.jpg");
+    background-image: url("../style/img.jpg");
     background-size: cover;
   }
   > .menu {

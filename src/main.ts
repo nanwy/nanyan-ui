@@ -6,8 +6,8 @@ import App from "./App.vue";
 import router from "./router";
 
 // import "/@/assets/scss/style.scss"
-import "../src/assets/scss/index.scss"
-import "../src/assets/scss/icon/iconfont.scss"
+import "../src/style/scss/index.scss"
+import "../src/style/scss/icon/iconfont.scss"
 
 
 import 'github-markdown-css'

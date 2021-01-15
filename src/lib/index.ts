@@ -1,0 +1,6 @@
+export { default as Switch } from './Switch.vue'
+export { default as Button } from './Button/button.vue'
+export { default as ButtonGroup } from './Button/buttonGroup.vue'
+export { default as Tabs } from './tabs/tabs.vue'
+export { default as Dialog } from './dialog/dialog.vue'
+export { default as Tab } from './tabs/tab.vue'

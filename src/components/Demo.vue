@@ -30,7 +30,7 @@
 <script lang="ts">
 import Button from "../lib/Button/Button.vue";
 import "prismjs";
-import "../assets/css/prism-dark.css";
+import "../style/css/prism-dark.css";
 import ClipboardJS from "clipboard";
 // 原创\nanyan-ui-3\node_modules\prismjs\themes\prism.css
 import { computed, nextTick, onMounted, ref } from "vue";

@@ -7,7 +7,7 @@
       {
         'is-round': round,
         'is-circle': circle,
-        'is-click': !unclick && !buttonDisabled,
+        'is-click': !buttonDisabled && !loading && !unclick,
       },
     ]"
     :autofocus="autofocus"

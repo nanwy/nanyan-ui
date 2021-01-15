@@ -12,26 +12,27 @@
         v-if="visible"
         @click.self="onClickOverlay"
       >
-        <div class="nan-dialog-wrapper">
-          <div class="nan-dialog">
-            <div class="nan-dialog-header">
-              <span class="nan-dialog-title">
-                {{ title }}
-              </span>
-              <button
-                class="nan-dialog-close"
-                v-if="closeBtn"
-                @click="closeClick"
-              >
-                <i class="nan-icon-close"></i>
-              </button>
-            </div>
-            <div class="nan-dialog-body">
-              <slot></slot>
-            </div>
-            <div v-if="$slots.footer" class="nan-dialog-footer">
-              <slot name="footer"></slot>
-            </div>
+        <div
+          class="nan-dialog"
+          :style="[`margin-top:${top}vh`, `width:${width}%`]"
+        >
+          <div class="nan-dialog-header">
+            <span class="nan-dialog-title">
+              {{ title }}
+            </span>
+            <button
+              class="nan-dialog-close"
+              v-if="closeBtn"
+              @click="closeClick"
+            >
+              <i class="nan-icon-close"></i>
+            </button>
+          </div>
+          <div class="nan-dialog-body">
+            <slot></slot>
+          </div>
+          <div v-if="$slots.footer" class="nan-dialog-footer">
+            <slot name="footer"></slot>
           </div>
         </div>
       </div>
@@ -43,7 +44,6 @@
 <script lang='ts'>
 import { defineComponent, watch, ref, isRef, onMounted } from "vue";
 // import type { Ref } from 'vue';
-import useRestoreActive from "./index";
 import NanButton from "../Button/button.vue";
 
 const CLOSE_EVENT = "close";
@@ -69,6 +69,14 @@ export default defineComponent({
       type: Boolean,
       default: true,
     },
+    top: {
+      type: String,
+      default: 15,
+    },
+    width: {
+      type: String,
+      default: 30,
+    },
     closed: {},
   },
   components: {
@@ -80,7 +88,7 @@ export default defineComponent({
     const visible = ref(false);
     function open() {
       visible.value = true;
-      console.log("visible.value: ", visible);
+      // console.log("visible.value: ", visible);
     }
     function doClose() {
       visible.value = false;
@@ -89,23 +97,23 @@ export default defineComponent({
     const closeClick = () => {
       // context.emit("update:visible", false);
       doClose();
-      console.log("visible: ", visible);
+      // console.log("visible: ", visible);
     };
     const onClickOverlay = (e) => {
-      console.log("点击了", e);
+      // console.log("点击了", e);
       if (!props.cancelOnClickOverlay) {
         closeClick();
       }
     };
     onMounted(() => {
-      console.log(props.modelValue, "true");
+      // console.log(props.modelValue, "true");
       if (props.modelValue) {
         visible.value = true;
         open();
       }
     });
     function afterLeave() {
-      console.log("触发");
+      // console.log("触发");
       context.emit("update:modelValue", false);
       context.emit("closed");
     }
@@ -125,11 +133,10 @@ export default defineComponent({
     //     }
     //   }
     // })
-    useRestoreActive(visible);
     watch(
       () => props.modelValue,
       (val) => {
-        console.log("wacth");
+        // console.log("wacth");
         if (val) {
           // closed.value = false
           open();
@@ -151,16 +158,16 @@ export default defineComponent({
         }
       }
     );
-
+    const afterEnter = () => {};
+    const beforeLeave = () => {};
     return {
       closeClick,
       onClickOverlay,
       visible,
       afterLeave,
+      beforeLeave,
+      afterEnter,
     };
   },
 });
 </script>
-
-<style lang='scss' scoped>
-</style>

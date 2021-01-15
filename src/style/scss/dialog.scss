@@ -3,26 +3,24 @@
 .nan-dialog-overlay{
   position: fixed;
   top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
-  // right: 0;
-  // bottom: 0;
-  // width: 100vw;
-  width: 100%;
+  z-index: 2000;
   height: 100%;
-  background: rgba(0,0,0,.3);
-  z-index: 200;
+  background-color: rgba(0,0,0,.5);
+  overflow: auto;
 }
 
 .nan-dialog{
-  position: relative;
-  background-color: #fff;
-  border-radius: $border-radius-sm;
-  box-shadow: 0 0px 3px fade_out(black, 0.5);
-  min-width: 15em;
+  margin-top: 15vh;
   width: 30%;
-  padding: 5px;
-  z-index: 2005;
+  position: relative;
   margin: 0 auto 50px;
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.3);
+  box-sizing: border-box;
   clip-path: polygon(
   20px 0,
   100% 0,
@@ -79,14 +77,14 @@
 
 .dialog-fade-enter-active {
   animation: modal-fade-in 0.3s !important;
-  .nan-dialog-wrapper {
+  .nan-dialog {
     animation: dialog-fade-in 0.3s;
   }
 }
 
 .dialog-fade-leave-active {
   animation: modal-fade-out 0.3s;
-  .nan-dialog-wrapper {
+  .nan-dialog {
     animation: dialog-fade-out 0.3s;
   }
 }

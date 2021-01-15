@@ -2,7 +2,7 @@
   <div>
     <div>
       <nan-button @click="x = true">打开dialog</nan-button>
-      <nan-dialog v-model="x" title="标题" cancelOnClickOverlay>
+      <nan-dialog v-model="x" title="标题">
         <strong>加粗的内容</strong>
         <template #footer>
           <nan-button @click="x = false">确定</nan-button>
