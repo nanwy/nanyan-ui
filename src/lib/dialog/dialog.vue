@@ -70,11 +70,11 @@ export default defineComponent({
       default: true,
     },
     top: {
-      type: String,
+      type: Number,
       default: 15,
     },
     width: {
-      type: String,
+      type: Number,
       default: 30,
     },
     closed: {},

@@ -17,7 +17,6 @@
 import { defineComponent, ref } from "vue";
 import NanDialog from "../lib/dialog/dialog.vue";
 import NanButton from "../lib/Button/button.vue";
-import { openDialog } from "../lib/dialog/openDialog";
 export default defineComponent({
   components: {
     NanDialog,
@@ -27,12 +26,9 @@ export default defineComponent({
     const x = ref(false);
     const toggle = () => {
       x.value = true;
-      console.log("x.value: ", x.value);
     };
-    const showDialog = () => {
-      openDialog({ title: "标题", content: "你好" });
-    };
-    return { x, toggle, showDialog };
+
+    return { x, toggle };
   },
 });
 </script>

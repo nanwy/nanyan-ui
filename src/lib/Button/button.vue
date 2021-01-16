@@ -38,6 +38,7 @@ type IButtonType = PropType<
   | "light"
   | "secondary"
   | "dark"
+  | "info"
 >;
 export default defineComponent({
   name: "NanButton",
@@ -62,6 +63,7 @@ export default defineComponent({
             "success",
             "danger",
             "warning",
+            "info",
             "cyberpunk",
           ].indexOf(val) !== -1
         );
