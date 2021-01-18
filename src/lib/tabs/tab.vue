@@ -7,6 +7,7 @@
 <script>
 import { defineComponent, computed, inject, ref, reactive } from "vue";
 export default defineComponent({
+  name: "NANTab",
   props: {
     title: {
       type: String,

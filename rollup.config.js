@@ -1,6 +1,8 @@
 import esbuild from 'rollup-plugin-esbuild'
 import vue from 'rollup-plugin-vue'
 import scss from 'rollup-plugin-scss'
+import typescript from 'rollup-plugin-typescript2'
+console.log('typescript: ', typescript);
 import dartSass from 'sass';
 import {
   terser
@@ -9,26 +11,36 @@ import {
 export default {
   input: 'src/lib/index.ts',
   output: {
-    globals: {
-      vue: 'Vue'
-    },
     name: 'NanUI',
     file: 'dist/lib/nan.js',
-    format: 'umd',
-    plugins: [terser()]
+    format: 'es',
+    // plugins: [terser()]
   },
   plugins: [
     scss({
       include: /\.scss$/,
-      sass: dartSass
+      output: './dist/lib/css/nan.css',
+      // plugins: [terser()],
+      sass: dartSass,
     }),
-    esbuild({
-      include: /\.[jt]s$/,
-      minify: process.env.NODE_ENV === 'production',
-      target: 'es2015'
+    typescript({
+      tsconfigOverride: {
+        'include': [
+          'packages/**/*',
+          'typings/vue-shim.d.ts',
+        ],
+        'exclude': [
+          'node_modules',
+          'packages/**/__tests__/*',
+        ],
+      },
+      abortOnError: false,
     }),
     vue({
-      include: /\.vue$/,
-    })
+      target: 'browser',
+      css: false,
+      exposeFilename: false,
+    }),
+
   ],
 }

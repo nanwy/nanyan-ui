@@ -48,10 +48,11 @@ import {
   HtmlHTMLAttributes,
 } from "vue";
 import Tab from "./tab.vue";
+console.log('Tab: ', Tab);
 export default {
   props: {
     // disabled: Boolean,
-    modelValue: Number,
+    modelValue: String,
   },
   setup(props, context) {
     const instance = getCurrentInstance();
@@ -61,7 +62,7 @@ export default {
     // console.log("currentName: ", currentName);
 
     const tabList = reactive([]);
-    let tabElList = reactive<HTMLDivElement[]>([]);
+    let tabElList = reactive([]);
     onMounted(async () => {
       await nextTick();
       tabElList.forEach((el, index) => {
@@ -71,7 +72,7 @@ export default {
           parseFloat(style.width) -
           (parseFloat(style.paddingLeft) + parseFloat(style.paddingRight));
         tabList[index].offsetLeft =
-          parseFloat(el.offsetLeft) + parseFloat(style.paddingLeft);
+          parseFloat(style.paddingLeft) + parseFloat(el.offsetLeft);
         // console.log("style: ", style);
       });
       console.log("tabElList: ", tabElList);
