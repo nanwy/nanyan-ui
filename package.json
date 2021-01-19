@@ -1,11 +1,11 @@
 {
-  "name": "nanyan-ui",
+  "name": "nanyan-uizhu",
   "version": "0.0.2",
   "files": [
     "dist/lib/*"
   ],
   "main": "dist/lib/nan.js",
-  "type": "module",  
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -14,6 +14,7 @@
   "dependencies": {
     "clipboard": "^2.0.6",
     "github-markdown-css": "^4.0.0",
+    "nanyan-ui": "0.0.2",
     "prismjs": "^1.23.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-beta.3"

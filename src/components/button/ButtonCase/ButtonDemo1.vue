@@ -17,11 +17,11 @@
   </div>
 </template>
 <script lang='ts'>
-import NanButton from "../../../lib/Button/button.vue";
+// import NanButton from "../../../lib/Button/button.vue";
 import { defineComponent, ref } from "vue";
 export default defineComponent({
   components: {
-    NanButton,
+    // NanButton,
   },
   setup() {
     const model = ref(0);
