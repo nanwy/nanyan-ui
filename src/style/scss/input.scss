@@ -1,0 +1,21 @@
+@import './global-import.scss';
+@include theme{
+
+  .nan-input{
+    display: inline-block;
+    .nan-input-inner{
+      outline: none;
+      border: none;
+      padding: 6px,8px;
+    }
+
+    @include statusMixin(input){
+      border:solid 1px $value;
+      background-color: mix($value,white,10%);
+    }
+  }
+}
+
+.nan-jjj{
+  color:#fff;
+}
