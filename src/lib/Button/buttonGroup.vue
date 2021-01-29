@@ -9,6 +9,3 @@ export default {
   name: "NANButtonGroup",
 };
 </script>
-<style lang="scss" scoped>
-</style>
-

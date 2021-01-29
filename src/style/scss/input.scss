@@ -1,21 +1,78 @@
 @import './global-import.scss';
+@import "./style.scss";
 @include theme{
 
   .nan-input{
     display: inline-block;
+    position: relative;
+    // line-height: 40px;
+    .nan-input-suffix{
+      position: absolute;
+      height: 100%;
+      right: 5px;
+      top: 0;
+      text-align: center;
+      color: #c0c4cc;
+      transition: all .3s;
+      pointer-events: none;
+      .nan-input-suffix-inner {
+        pointer-events: all;
+        .nan-input-icon{
+          width: 25px;
+          line-height: 40px;
+        }
+        .nan-input-clear{
+          color: #c0c4cc;
+          font-size: 14px;
+          cursor: pointer;
+          transition: color .2s cubic-bezier(.645,.045,.355,1);
+        }
+    }
+      
+    }
+    .nan-input-prefix{
+      position: absolute;
+      height: 100%;
+      left: 5px;
+      top: 0;
+      text-align: center;
+      color: #c0c4cc;
+      transition: all .3s;
+      pointer-events: none;
+      .nan-input-icon{
+        width: 25px;
+        line-height: 40px;
+      }
+    }
     .nan-input-inner{
+      background-color: #fff;
+      background-image: none;
+      border-radius: 4px;
+      border: 1px solid #dcdfe6;
+      box-sizing: border-box;
+      color: #606266;
+      display: inline-block;
+      font-size: inherit;
+      height: 40px;
+      line-height: 40px;
       outline: none;
-      border: none;
-      padding: 6px,8px;
+      padding: 0 15px;
+      transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+      width: 100%;
+      &:focus {
+        border-color: $input-btn-focus-color;
+      }
     }
 
-    @include statusMixin(input){
-      border:solid 1px $value;
-      background-color: mix($value,white,10%);
+    // @include statusMixin(input){
+    //   border-radius: 4px;
+    //   border: 1px solid #dcdfe6;
+    // }
+
+  }
+  .nan-prefix{
+    .nan-input-inner{
+      padding-left: 30px;
     }
   }
-}
-
-.nan-jjj{
-  color:#fff;
 }

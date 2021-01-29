@@ -5,6 +5,7 @@ import NANButtonGroup from './Button/buttonGroup.vue'
 import NANTabs from './tabs/tabs.vue'
 import NANTab from './tabs/tab.vue'
 import NANDialog from './dialog/dialog.vue'
+import NanInput from './Input/input.vue'
 // export { } from '../style/scss/index.scss'
 const components = [
   NANButton,
@@ -12,7 +13,8 @@ const components = [
   NANDialog,
   NANSwitch,
   NANTabs,
-  NANTab
+  NANTab,
+  NanInput
 ]
 // console.log(components[0].name);
 const install = (app: App): void => {
@@ -25,7 +27,7 @@ const install = (app: App): void => {
     app.component(component.name, component)
   })
 }
-const version = '0.0.1'
+const version = '0.0.5'
 export {
   NANButton,
   NANButtonGroup,
@@ -33,6 +35,7 @@ export {
   NANSwitch,
   NANTabs,
   NANTab,
+  NanInput,
   install,
 
   version

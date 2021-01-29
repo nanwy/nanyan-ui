@@ -1,6 +1,6 @@
 {
-  "name": "nanyan-uizhu",
-  "version": "0.0.2",
+  "name": "nanyan-ui",
+  "version": "0.0.3",
   "files": [
     "dist/lib/*"
   ],
@@ -14,7 +14,7 @@
   "dependencies": {
     "clipboard": "^2.0.6",
     "github-markdown-css": "^4.0.0",
-    "nanyan-ui": "0.0.2",
+    "nanyan-uizhu": "0.0.3",
     "prismjs": "^1.23.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-beta.3"
@@ -23,16 +23,8 @@
     "@rollup/plugin-typescript": "^6.0.0",
     "@vue/compiler-sfc": "^3.0.0",
     "cross-env": "^7.0.2",
-    "karma": "^5.0.9",
-    "karma-chrome-launcher": "^3.1.0",
-    "karma-coverage": "^2.0.2",
-    "karma-mocha": "^2.0.1",
-    "karma-sourcemap-loader": "^0.3.7",
-    "karma-spec-reporter": "0.0.32",
-    "karma-webpack": "^4.0.2",
     "lerna": "^3.22.1",
     "marked": "^1.2.7",
-    "mocha": "^8.2.1",
     "rollup": "^2.28.2",
     "rollup-plugin-esbuild": "2.5.0",
     "rollup-plugin-scss": "2.6.0",

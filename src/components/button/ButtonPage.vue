@@ -1,13 +1,17 @@
 <template>
-  <div>
-    <h1 class="first-title">Button 组件示例</h1>
-    <section class="second-title">
-      <h2>基础用法</h2>
-      <p>普通的<span>button</span><span></span></p>
-    </section>
-    <section class="second-title">
-      <Demo :component="ButtonDemo" />
-    </section>
+  <div class="main-content">
+    <div class="example">
+      <h1 class="first-title">Button 组件示例</h1>
+      <section class="second-title">
+        <h2>基础用法</h2>
+        <p>普通的<span>button</span><span></span></p>
+      </section>
+    </div>
+    <div class="example">
+      <section class="second-title">
+        <Demo :component="ButtonDemo" />
+      </section>
+    </div>
     <section class="second-title">
       <h2>进阶用法</h2>
       <p>边框<span>button</span></p>

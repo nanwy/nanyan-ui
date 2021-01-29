@@ -50,14 +50,13 @@ $dt: map_get($theme-default, '');
     }
   }
 }
-
 @mixin statusMixin($component) {
   @each $key in (Primary, Success, Warn, Error, Info) {
 
     $value: plv(color#{$key}) !global;
 
     $name: to-lower-case($key) !global;
-    &.pl-#{$component}-status-#{$name} {
+    &.nan-#{$component}-status-#{$name} {
       @content;
     }
   }
@@ -69,7 +68,7 @@ $dt: map_get($theme-default, '');
     $value: plv(shape#{$key}) !global;
     $name: to-lower-case($key) !global;
 
-    &.pl-#{$component}-shape-#{$name} {
+    &.nan-#{$component}-shape-#{$name} {
       @content;
     }
   }
@@ -81,7 +80,7 @@ $dt: map_get($theme-default, '');
     $value: plv(size#{$key}) !global;
     $name: to-lower-case($key) !global;
 
-    &.pl-#{$component}-size-#{$name} {
+    &.nan-#{$component}-size-#{$name} {
       @content;
     }
   }

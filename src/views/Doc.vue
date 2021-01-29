@@ -1,8 +1,8 @@
 <template>
-  <div class="layout nan-jjj">
+  <div class="layout" :class="{ 'show-menu': !asideVisible }">
     <Topnav class="nav" meunVisible />
     <div class="content">
-      <aside v-if="asideVisible">
+      <aside class="aside-menu" :class="{ 'hide-menu': !asideVisible }">
         <h2>文档</h2>
         <ol>
           <li>
@@ -65,6 +65,9 @@ export default {
 }
 .layout {
   // display: flex;
+  width: 1140px;
+  padding: 0;
+  margin: 0 auto;
   // flex-direction: column;
   height: 100vh;
   > .nav {
@@ -72,8 +75,6 @@ export default {
   }
   > .content {
     flex-grow: 1;
-    padding-top: 80px;
-    padding-left: 190px;
     @media (max-width: 500px) {
       padding-left: 0;
     }
@@ -81,24 +82,23 @@ export default {
 }
 .content {
   display: flex;
+  height: 100vh;
+  background: #f7f8fa;
   > aside {
     flex-shrink: 0;
   }
   > main {
     flex-grow: 1;
     padding: 16px;
-    background: #fff;
   }
 }
 aside {
   background: lightblue;
-  width: 150px;
-  padding: 16px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding-top: 70px;
   height: 100%;
+  width: 240px;
+  padding: 10px;
+  transition: all 0.5s;
+  z-index: 1;
   > h2 {
     margin-bottom: 4px;
   }
@@ -106,12 +106,6 @@ aside {
     > li {
       padding: 4px 0;
     }
-  }
-  @media (max-width: 500px) {
-    position: fixed;
-    padding-top: 80px;
-    top: 0;
-    left: 0;
   }
 }
 main {

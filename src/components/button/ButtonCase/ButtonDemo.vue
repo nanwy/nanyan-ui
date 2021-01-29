@@ -4,10 +4,10 @@
 <template>
   <div>
     <div style="margin-bottom: 10px">
-      <NanButton>默认按钮</NanButton>
-      <NanButton theme="danger">危险按钮</NanButton>
-      <NanButton theme="success">成功按钮</NanButton>
-      <NanButton theme="info">普通按钮</NanButton>
+      <nan-button>默认按钮</nan-button>
+      <nan-button theme="danger">危险按钮</nan-button>
+      <nan-button theme="success">成功按钮</nan-button>
+      <nan-button theme="info">普通按钮</nan-button>
     </div>
     <div style="margin-bottom: 10px">
       <NanButton theme="dark">暗黑按钮</NanButton>

@@ -15,12 +15,16 @@ body{
   width: 100vw;
   height: 100%;
 }
+.main-content{
+  padding: 10px;
 
+}
 .first-title {
   font-size: 1.5em;
   margin-bottom: 20px;
 }
 .second-title {
+
   h2 {
     position: relative;
     font-size: 1.2em;
@@ -42,6 +46,37 @@ body{
       color: #ff1f1f;
     }
   }
+}
+.example{
+  width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 12px #ebedf0;
+    height: auto;
+    margin-top: 25px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.show-menu{
+
+.hide-menu{
+  position: fixed;
+  transform: translateX(0px);
+  transition: all .5s;
+  z-index: 1;
+}
+}
+
+@media screen and (max-width: 500px) {
+ .aside-menu{
+    position: fixed;
+    top: 0 !important;
+    z-index: 1;
+    transform: translateX(-100%);
+ }
+}
+body{
+  background: #f7f8fa;
 }
 // *{
 //   font-size: 20px;

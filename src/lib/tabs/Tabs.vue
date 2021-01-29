@@ -48,8 +48,9 @@ import {
   HtmlHTMLAttributes,
 } from "vue";
 import Tab from "./tab.vue";
-console.log('Tab: ', Tab);
+// console.log('Tab: ', Tab);
 export default {
+  name: "NANTabs",
   props: {
     // disabled: Boolean,
     modelValue: String,

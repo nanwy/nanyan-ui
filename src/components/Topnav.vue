@@ -1,6 +1,6 @@
 <template>
   <div class="topnav">
-    <span class="toggleAside" v-if="meunVisible" @click="toggleSilde"></span>
+    <div class="toggleAside" v-if="meunVisible" @click="toggleSilde"></div>
     <router-link to="/" class="logo"></router-link>
     <div class="meun">MEUN</div>
   </div>
@@ -57,17 +57,20 @@ export default {
     }
   }
   > .toggleAside {
-    width: 24px;
-    height: 6px;
-    // background: red;
-    position: absolute;
+    width: 30px;
+    height: 30px;
+    display: block;
+    background: red;
+    position: fixed;
     left: 16px;
+    z-index: 99;
+    cursor: pointer;
     top: 16px;
     transform: translateY(-50%);
     display: none;
   }
   span {
-    background-color: #fff;
+    background-color: #f7f8fa;
   }
   span::after {
     content: "";
