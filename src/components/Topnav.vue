@@ -2,6 +2,7 @@
   <div class="topnav">
     <div class="toggleAside" v-if="meunVisible" @click="toggleSilde"></div>
     <router-link to="/" class="logo"></router-link>
+    <div class="col"><div class="title">NANYAN-UI</div></div>
     <div class="meun">MEUN</div>
   </div>
 </template>
@@ -27,22 +28,39 @@ export default {
 </script>
 <style lang="scss" scoped>
 .topnav {
-  // background: rgb(0, 0, 0);
+  background: #f5f5f5;
   // padding: 0 10px;
+  height: 48px;
   display: flex;
   // padding: 16px;
   position: fixed;
   top: 0;
   left: 0;
+  box-shadow: 0 2px 4px -1px rgb(34 34 34 / 15%),
+    0 4px 5px 0 rgb(34 34 34 / 12%), 0 1px 10px 0 rgb(34 34 34 / 10%);
   width: 100%;
   z-index: 10;
-  justify-content: center;
-  align-items: center;
+  // justify-content: center;
+  // align-items: center;
   box-sizing: border-box;
-  color: #cdcdcd;
+  color: #000;
+  .col {
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    width: 100%;
+    padding: 12px;
+    max-width: 100%;
+    .title {
+      font-size: 1.25rem;
+      font-weight: 500;
+      // letter-spacing: 0.1rem;
+    }
+  }
   > .logo {
     max-width: 6em;
-    margin-right: auto;
+    // margin-right: auto;
     width: 50px;
     height: 50px;
     background-image: url("../style/img.jpg");
@@ -100,9 +118,9 @@ export default {
     > .meun {
       display: none;
     }
-    > .logo {
-      margin: 0 auto;
-    }
+    // > .logo {
+    //   margin: 0 auto;
+    // }
     > .toggleAside {
       display: inline-block;
     }

@@ -48,6 +48,7 @@ import NanButton from "../Button/button.vue";
 
 const CLOSE_EVENT = "close";
 export default defineComponent({
+  name: "nan-dialog",
   props: {
     visible1: {
       type: Boolean,

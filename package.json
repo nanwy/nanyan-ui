@@ -4,7 +4,8 @@
   "files": [
     "dist/lib/*"
   ],
-  "main": "dist/lib/nan.js",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

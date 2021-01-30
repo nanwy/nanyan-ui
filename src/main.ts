@@ -1,8 +1,8 @@
-import "./style/scss/index.scss"
+// import './style/scss/global-import.scss'
 import "./lib/scss/nan.scss";
-import './style/scss/global-import.scss'
+import "./style/scss/index.scss"
 import "./index.scss";
-import "./index.css";
+// import "./index.css";
 import { createApp } from "vue";
 import App from "./App.vue";
 // import App from './App.tsx';
@@ -11,7 +11,7 @@ import router from "./router";
 import NanUI from 'nanyan-uizhu'
 console.log('NanUI: ', NanUI);
 // import 'nanyan-ui/dist/lib/index.css'
-import 'nanyan-uizhu/index.css'
+// import 'nanyan-uizhu/index.css'
 // import "/@/assets/scss/style.scss"
 
 // import "../src/style/scss/icon/iconfont.scss"
@@ -27,6 +27,6 @@ console.log('app', app);
 
 app.use(router);
 app.mount("#app");
-// app.use(V3Components)
-app.use(NanUI)
+app.use(V3Components)
+// app.use(NanUI)
 // app.component('Markdown', Markdown)

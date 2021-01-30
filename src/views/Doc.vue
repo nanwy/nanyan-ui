@@ -65,9 +65,8 @@ export default {
 }
 .layout {
   // display: flex;
-  width: 1140px;
+
   padding: 0;
-  margin: 0 auto;
   // flex-direction: column;
   height: 100vh;
   > .nav {
@@ -82,21 +81,26 @@ export default {
 }
 .content {
   display: flex;
+  margin: 0 auto;
   height: 100vh;
-  background: #f7f8fa;
+  width: 1140px;
+  // background: #f7f8fa;
   > aside {
     flex-shrink: 0;
   }
   > main {
     flex-grow: 1;
-    padding: 16px;
+    // padding: 16px;
+    padding: 48px 0 0;
   }
 }
 aside {
-  background: lightblue;
+  background: #fff;
   height: 100%;
   width: 240px;
+  margin-top: 10px;
   padding: 10px;
+  border-radius: 8px;
   transition: all 0.5s;
   z-index: 1;
   > h2 {
