@@ -1,0 +1,83 @@
+@import "./style.scss";
+
+@each $color,
+$value in $theme-colors {
+  .nan-radio-#{$color}.is-checked {
+    color: $value;
+    border-radius: 5px;
+    transition: all .2s;
+    position: relative;
+
+    .is-checked{
+      color: $value;
+      border-color: $value;
+      &::after{
+        display: inline-block;
+        content: "";
+        width: 10px;
+        height: 10px;
+        background: $value;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        animation: modal-fade-in .3s;
+        cursor: pointer;
+      }
+    }
+  }
+
+}
+.nan-radio-input{
+  position: absolute;
+  opacity: 0;
+}
+.nan-radio-checked{
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  margin-right: 5px;
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.nan-radio{
+  color: #606266;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 500;
+  line-height: 16px;
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+  outline: none;
+  font-size: 16px;
+  margin-right: 30px;
+}
+
+
+@keyframes modal-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes modal-fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

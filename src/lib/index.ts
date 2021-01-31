@@ -6,6 +6,7 @@ import NANTabs from './tabs/tabs.vue'
 import NANTab from './tabs/tab.vue'
 import NANDialog from './dialog/dialog.vue'
 import NanInput from './Input/input.vue'
+import NanRadio from './radio/radio.vue'
 // export { } from '../style/scss/index.scss'
 const components = [
   NANButton,
@@ -14,7 +15,8 @@ const components = [
   NANSwitch,
   NANTabs,
   NANTab,
-  NanInput
+  NanInput,
+  NanRadio
 ]
 // console.log(components[0].name);
 const install = (app: App): void => {
@@ -36,6 +38,7 @@ export {
   NANTabs,
   NANTab,
   NanInput,
+  NanRadio,
   install,
 
   version

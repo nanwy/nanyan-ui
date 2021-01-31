@@ -10,6 +10,7 @@ import start from './markdown/start.md'
 import install from './markdown/install.md'
 import Markdown from './components/Markdown.vue'
 import Input from './components/input.vue'
+import Radio from './components/radio.vue'
 import { h } from "vue";
 const md = (path) => h(Markdown, {
   content: path,
@@ -65,6 +66,10 @@ const routes: Array<RouteRecordRaw> = [
         path: "input",
         component: Input,
       },
+      {
+        path: "radio",
+        component: Radio
+      }
     ],
   },
 ]

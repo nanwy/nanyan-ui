@@ -32,6 +32,9 @@
           <li>
             <router-link to="/doc/input">Input 组件</router-link>
           </li>
+          <li>
+            <router-link to="/doc/radio">Radio 组件</router-link>
+          </li>
         </ol>
       </aside>
       <main>
@@ -81,9 +84,10 @@ export default {
 }
 .content {
   display: flex;
-  margin: 0 auto;
-  height: 100vh;
-  width: 1140px;
+  // margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  // width: 1140px;
   // background: #f7f8fa;
   > aside {
     flex-shrink: 0;
@@ -91,15 +95,15 @@ export default {
   > main {
     flex-grow: 1;
     // padding: 16px;
-    padding: 48px 0 0;
+    padding: 48px 30px 0;
   }
 }
 aside {
   background: #fff;
   height: 100%;
   width: 240px;
-  margin-top: 10px;
-  padding: 10px;
+  // margin-top: 10px;
+  padding: 54px 10px 0;
   border-radius: 8px;
   transition: all 0.5s;
   z-index: 1;
