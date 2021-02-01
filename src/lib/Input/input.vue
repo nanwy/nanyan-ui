@@ -76,7 +76,7 @@ export default {
     showPassword: Boolean,
   },
   setup(props) {
-    console.log("加载了 Input 组件");
+    // console.log("加载了 Input 组件");
     const modelValue = ref("");
     const inputRef = ref(null as null | HTMLInputElement);
     console.log("inputRef: ", inputRef);
