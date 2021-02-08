@@ -25,7 +25,7 @@
     "@vue/compiler-sfc": "^3.0.0",
     "cross-env": "^7.0.2",
     "lerna": "^3.22.1",
-    "marked": "^1.2.7",
+    "marked": "^2.0.0",
     "rollup": "^2.28.2",
     "rollup-plugin-esbuild": "2.5.0",
     "rollup-plugin-scss": "2.6.0",
