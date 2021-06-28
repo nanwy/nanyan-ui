@@ -16,7 +16,7 @@
     "clipboard": "^2.0.6",
     "github-markdown-css": "^4.0.0",
     "nanyan-uizhu": "0.0.3",
-    "prismjs": "^1.23.0",
+    "prismjs": "^1.24.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-beta.3"
   },
