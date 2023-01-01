@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^6.0.0",
-    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/compiler-sfc": "^3.2.45",
     "cross-env": "^7.0.2",
     "lerna": "^3.22.1",
     "marked": "^1.2.7",
